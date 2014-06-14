@@ -1,0 +1,637 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F7ECBED194C757F00C70AAA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FDF3896194AE9660000C12B /* MainMenu.xib */; };
+		1F9FFE82194C0E9800465172 /* AddProjectWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FFE80194C0E9800465172 /* AddProjectWindowController.m */; };
+		1F9FFE83194C0E9800465172 /* AddProjectWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F9FFE81194C0E9800465172 /* AddProjectWindowController.xib */; };
+		1F9FFE84194C131D00465172 /* AddProjectWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FFE80194C0E9800465172 /* AddProjectWindowController.m */; };
+		1F9FFE85194C132200465172 /* AddProjectWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F9FFE81194C0E9800465172 /* AddProjectWindowController.xib */; };
+		1F9FFE87194C150100465172 /* MacTemplate.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1F9FFE86194C150100465172 /* MacTemplate.xml */; };
+		1F9FFE88194C150100465172 /* MacTemplate.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1F9FFE86194C150100465172 /* MacTemplate.xml */; };
+		1F9FFE8A194C151400465172 /* IOSTemplate.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1F9FFE89194C151400465172 /* IOSTemplate.xml */; };
+		1F9FFE8B194C151400465172 /* IOSTemplate.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1F9FFE89194C151400465172 /* IOSTemplate.xml */; };
+		1FDF3868194AE1070000C12B /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDF3867194AE1070000C12B /* AppKit.framework */; };
+		1FDF386A194AE1070000C12B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDF3869194AE1070000C12B /* Foundation.framework */; };
+		1FDF3870194AE1070000C12B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FDF386E194AE1070000C12B /* InfoPlist.strings */; };
+		1FDF3873194AE1070000C12B /* BetterXib.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FDF3872194AE1070000C12B /* BetterXib.m */; };
+		1FDF3882194AE9660000C12B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDF3881194AE9660000C12B /* Cocoa.framework */; };
+		1FDF388C194AE9660000C12B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FDF388A194AE9660000C12B /* InfoPlist.strings */; };
+		1FDF388E194AE9660000C12B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FDF388D194AE9660000C12B /* main.m */; };
+		1FDF3892194AE9660000C12B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1FDF3890194AE9660000C12B /* Credits.rtf */; };
+		1FDF3895194AE9660000C12B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FDF3894194AE9660000C12B /* AppDelegate.m */; };
+		1FDF389A194AE9660000C12B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FDF3899194AE9660000C12B /* Images.xcassets */; };
+		1FDF38A1194AE9660000C12B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDF38A0194AE9660000C12B /* XCTest.framework */; };
+		1FDF38A2194AE9660000C12B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDF3881194AE9660000C12B /* Cocoa.framework */; };
+		1FDF38AA194AE9660000C12B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FDF38A8194AE9660000C12B /* InfoPlist.strings */; };
+		1FDF38AC194AE9660000C12B /* BetterXibTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FDF38AB194AE9660000C12B /* BetterXibTestTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1FDF38A3194AE9660000C12B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FDF385C194AE1070000C12B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FDF387F194AE9660000C12B;
+			remoteInfo = BetterXibTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F9FFE7F194C0E9800465172 /* AddProjectWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddProjectWindowController.h; sourceTree = "<group>"; };
+		1F9FFE80194C0E9800465172 /* AddProjectWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddProjectWindowController.m; sourceTree = "<group>"; };
+		1F9FFE81194C0E9800465172 /* AddProjectWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddProjectWindowController.xib; sourceTree = "<group>"; };
+		1F9FFE86194C150100465172 /* MacTemplate.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = MacTemplate.xml; sourceTree = "<group>"; };
+		1F9FFE89194C151400465172 /* IOSTemplate.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = IOSTemplate.xml; sourceTree = "<group>"; };
+		1FDF3864194AE1070000C12B /* BetterXib.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetterXib.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FDF3867194AE1070000C12B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		1FDF3869194AE1070000C12B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1FDF386D194AE1070000C12B /* BetterXib-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BetterXib-Info.plist"; sourceTree = "<group>"; };
+		1FDF386F194AE1070000C12B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1FDF3871194AE1070000C12B /* BetterXib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BetterXib.h; sourceTree = "<group>"; };
+		1FDF3872194AE1070000C12B /* BetterXib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BetterXib.m; sourceTree = "<group>"; };
+		1FDF3874194AE1070000C12B /* BetterXib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BetterXib-Prefix.pch"; sourceTree = "<group>"; };
+		1FDF3880194AE9660000C12B /* BetterXibTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterXibTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FDF3881194AE9660000C12B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		1FDF3884194AE9660000C12B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		1FDF3885194AE9660000C12B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1FDF3886194AE9660000C12B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1FDF3889194AE9660000C12B /* BetterXibTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BetterXibTest-Info.plist"; sourceTree = "<group>"; };
+		1FDF388B194AE9660000C12B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1FDF388D194AE9660000C12B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1FDF388F194AE9660000C12B /* BetterXibTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BetterXibTest-Prefix.pch"; sourceTree = "<group>"; };
+		1FDF3891194AE9660000C12B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		1FDF3893194AE9660000C12B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1FDF3894194AE9660000C12B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1FDF3897194AE9660000C12B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1FDF3899194AE9660000C12B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1FDF389F194AE9660000C12B /* BetterXibTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetterXibTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FDF38A0194AE9660000C12B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1FDF38A7194AE9660000C12B /* BetterXibTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BetterXibTestTests-Info.plist"; sourceTree = "<group>"; };
+		1FDF38A9194AE9660000C12B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1FDF38AB194AE9660000C12B /* BetterXibTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BetterXibTestTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1FDF3861194AE1070000C12B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FDF3868194AE1070000C12B /* AppKit.framework in Frameworks */,
+				1FDF386A194AE1070000C12B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FDF387D194AE9660000C12B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FDF3882194AE9660000C12B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FDF389C194AE9660000C12B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FDF38A2194AE9660000C12B /* Cocoa.framework in Frameworks */,
+				1FDF38A1194AE9660000C12B /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1FDF385B194AE1070000C12B = {
+			isa = PBXGroup;
+			children = (
+				1FDF386B194AE1070000C12B /* BetterXib */,
+				1FDF3887194AE9660000C12B /* BetterXibTest */,
+				1FDF38A5194AE9660000C12B /* BetterXibTestTests */,
+				1FDF3866194AE1070000C12B /* Frameworks */,
+				1FDF3865194AE1070000C12B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1FDF3865194AE1070000C12B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FDF3864194AE1070000C12B /* BetterXib.xcplugin */,
+				1FDF3880194AE9660000C12B /* BetterXibTest.app */,
+				1FDF389F194AE9660000C12B /* BetterXibTestTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1FDF3866194AE1070000C12B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1FDF3867194AE1070000C12B /* AppKit.framework */,
+				1FDF3869194AE1070000C12B /* Foundation.framework */,
+				1FDF3881194AE9660000C12B /* Cocoa.framework */,
+				1FDF38A0194AE9660000C12B /* XCTest.framework */,
+				1FDF3883194AE9660000C12B /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1FDF386B194AE1070000C12B /* BetterXib */ = {
+			isa = PBXGroup;
+			children = (
+				1FDF3871194AE1070000C12B /* BetterXib.h */,
+				1FDF3872194AE1070000C12B /* BetterXib.m */,
+				1FDF386C194AE1070000C12B /* Supporting Files */,
+				1F9FFE7F194C0E9800465172 /* AddProjectWindowController.h */,
+				1F9FFE80194C0E9800465172 /* AddProjectWindowController.m */,
+				1F9FFE81194C0E9800465172 /* AddProjectWindowController.xib */,
+				1F9FFE86194C150100465172 /* MacTemplate.xml */,
+				1F9FFE89194C151400465172 /* IOSTemplate.xml */,
+			);
+			path = BetterXib;
+			sourceTree = "<group>";
+		};
+		1FDF386C194AE1070000C12B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1FDF386D194AE1070000C12B /* BetterXib-Info.plist */,
+				1FDF386E194AE1070000C12B /* InfoPlist.strings */,
+				1FDF3874194AE1070000C12B /* BetterXib-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1FDF3883194AE9660000C12B /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1FDF3884194AE9660000C12B /* AppKit.framework */,
+				1FDF3885194AE9660000C12B /* CoreData.framework */,
+				1FDF3886194AE9660000C12B /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		1FDF3887194AE9660000C12B /* BetterXibTest */ = {
+			isa = PBXGroup;
+			children = (
+				1FDF3893194AE9660000C12B /* AppDelegate.h */,
+				1FDF3894194AE9660000C12B /* AppDelegate.m */,
+				1FDF3896194AE9660000C12B /* MainMenu.xib */,
+				1FDF3899194AE9660000C12B /* Images.xcassets */,
+				1FDF3888194AE9660000C12B /* Supporting Files */,
+			);
+			path = BetterXibTest;
+			sourceTree = "<group>";
+		};
+		1FDF3888194AE9660000C12B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1FDF3889194AE9660000C12B /* BetterXibTest-Info.plist */,
+				1FDF388A194AE9660000C12B /* InfoPlist.strings */,
+				1FDF388D194AE9660000C12B /* main.m */,
+				1FDF388F194AE9660000C12B /* BetterXibTest-Prefix.pch */,
+				1FDF3890194AE9660000C12B /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1FDF38A5194AE9660000C12B /* BetterXibTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				1FDF38AB194AE9660000C12B /* BetterXibTestTests.m */,
+				1FDF38A6194AE9660000C12B /* Supporting Files */,
+			);
+			path = BetterXibTestTests;
+			sourceTree = "<group>";
+		};
+		1FDF38A6194AE9660000C12B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1FDF38A7194AE9660000C12B /* BetterXibTestTests-Info.plist */,
+				1FDF38A8194AE9660000C12B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1FDF3863194AE1070000C12B /* BetterXib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FDF3877194AE1070000C12B /* Build configuration list for PBXNativeTarget "BetterXib" */;
+			buildPhases = (
+				1FDF3860194AE1070000C12B /* Sources */,
+				1FDF3861194AE1070000C12B /* Frameworks */,
+				1FDF3862194AE1070000C12B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BetterXib;
+			productName = BetterXib;
+			productReference = 1FDF3864194AE1070000C12B /* BetterXib.xcplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+		1FDF387F194AE9660000C12B /* BetterXibTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FDF38AD194AE9660000C12B /* Build configuration list for PBXNativeTarget "BetterXibTest" */;
+			buildPhases = (
+				1FDF387C194AE9660000C12B /* Sources */,
+				1FDF387D194AE9660000C12B /* Frameworks */,
+				1FDF387E194AE9660000C12B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BetterXibTest;
+			productName = BetterXibTest;
+			productReference = 1FDF3880194AE9660000C12B /* BetterXibTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1FDF389E194AE9660000C12B /* BetterXibTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FDF38B0194AE9660000C12B /* Build configuration list for PBXNativeTarget "BetterXibTestTests" */;
+			buildPhases = (
+				1FDF389B194AE9660000C12B /* Sources */,
+				1FDF389C194AE9660000C12B /* Frameworks */,
+				1FDF389D194AE9660000C12B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FDF38A4194AE9660000C12B /* PBXTargetDependency */,
+			);
+			name = BetterXibTestTests;
+			productName = BetterXibTestTests;
+			productReference = 1FDF389F194AE9660000C12B /* BetterXibTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1FDF385C194AE1070000C12B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = duohuo;
+				TargetAttributes = {
+					1FDF389E194AE9660000C12B = {
+						TestTargetID = 1FDF387F194AE9660000C12B;
+					};
+				};
+			};
+			buildConfigurationList = 1FDF385F194AE1070000C12B /* Build configuration list for PBXProject "BetterXib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1FDF385B194AE1070000C12B;
+			productRefGroup = 1FDF3865194AE1070000C12B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1FDF3863194AE1070000C12B /* BetterXib */,
+				1FDF387F194AE9660000C12B /* BetterXibTest */,
+				1FDF389E194AE9660000C12B /* BetterXibTestTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1FDF3862194AE1070000C12B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FDF3870194AE1070000C12B /* InfoPlist.strings in Resources */,
+				1F9FFE8A194C151400465172 /* IOSTemplate.xml in Resources */,
+				1F9FFE87194C150100465172 /* MacTemplate.xml in Resources */,
+				1F9FFE83194C0E9800465172 /* AddProjectWindowController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FDF387E194AE9660000C12B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FDF388C194AE9660000C12B /* InfoPlist.strings in Resources */,
+				1F9FFE88194C150100465172 /* MacTemplate.xml in Resources */,
+				1FDF389A194AE9660000C12B /* Images.xcassets in Resources */,
+				1FDF3892194AE9660000C12B /* Credits.rtf in Resources */,
+				1F9FFE85194C132200465172 /* AddProjectWindowController.xib in Resources */,
+				1F7ECBED194C757F00C70AAA /* MainMenu.xib in Resources */,
+				1F9FFE8B194C151400465172 /* IOSTemplate.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FDF389D194AE9660000C12B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FDF38AA194AE9660000C12B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1FDF3860194AE1070000C12B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FDF3873194AE1070000C12B /* BetterXib.m in Sources */,
+				1F9FFE82194C0E9800465172 /* AddProjectWindowController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FDF387C194AE9660000C12B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FDF3895194AE9660000C12B /* AppDelegate.m in Sources */,
+				1F9FFE84194C131D00465172 /* AddProjectWindowController.m in Sources */,
+				1FDF388E194AE9660000C12B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FDF389B194AE9660000C12B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FDF38AC194AE9660000C12B /* BetterXibTestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FDF38A4194AE9660000C12B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1FDF387F194AE9660000C12B /* BetterXibTest */;
+			targetProxy = 1FDF38A3194AE9660000C12B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1FDF386E194AE1070000C12B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FDF386F194AE1070000C12B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1FDF388A194AE9660000C12B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FDF388B194AE9660000C12B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1FDF3890194AE9660000C12B /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FDF3891194AE9660000C12B /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		1FDF3896194AE9660000C12B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FDF3897194AE9660000C12B /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		1FDF38A8194AE9660000C12B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FDF38A9194AE9660000C12B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1FDF3875194AE1070000C12B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1FDF3876194AE1070000C12B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1FDF3878194AE1070000C12B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BetterXib/BetterXib-Prefix.pch";
+				INFOPLIST_FILE = "BetterXib/BetterXib-Info.plist";
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Debug;
+		};
+		1FDF3879194AE1070000C12B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BetterXib/BetterXib-Prefix.pch";
+				INFOPLIST_FILE = "BetterXib/BetterXib-Info.plist";
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Release;
+		};
+		1FDF38AE194AE9660000C12B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BetterXibTest/BetterXibTest-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BetterXibTest/BetterXibTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1FDF38AF194AE9660000C12B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BetterXibTest/BetterXibTest-Prefix.pch";
+				INFOPLIST_FILE = "BetterXibTest/BetterXibTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1FDF38B1194AE9660000C12B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BetterXibTest.app/Contents/MacOS/BetterXibTest";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BetterXibTest/BetterXibTest-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BetterXibTestTests/BetterXibTestTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		1FDF38B2194AE9660000C12B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BetterXibTest.app/Contents/MacOS/BetterXibTest";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BetterXibTest/BetterXibTest-Prefix.pch";
+				INFOPLIST_FILE = "BetterXibTestTests/BetterXibTestTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1FDF385F194AE1070000C12B /* Build configuration list for PBXProject "BetterXib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FDF3875194AE1070000C12B /* Debug */,
+				1FDF3876194AE1070000C12B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FDF3877194AE1070000C12B /* Build configuration list for PBXNativeTarget "BetterXib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FDF3878194AE1070000C12B /* Debug */,
+				1FDF3879194AE1070000C12B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FDF38AD194AE9660000C12B /* Build configuration list for PBXNativeTarget "BetterXibTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FDF38AE194AE9660000C12B /* Debug */,
+				1FDF38AF194AE9660000C12B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FDF38B0194AE9660000C12B /* Build configuration list for PBXNativeTarget "BetterXibTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FDF38B1194AE9660000C12B /* Debug */,
+				1FDF38B2194AE9660000C12B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1FDF385C194AE1070000C12B /* Project object */;
+}
