@@ -10,7 +10,7 @@
 #import "AddProjectWindowController.h"
 
 static NSString * const PLUGIN_NAME = @"BetterXib";
-static NSString * const WORKING_DIR = @"BetterXib";
+static NSString * const WORKING_DIR = @".BetterXib";
 static NSString * const PROJECT_DIR = @"Projects";
 static NSString * const HELLO_FILE = @"hello.plist";
 static NSString * const XIB_SUFFIX = @"xib";
@@ -188,11 +188,12 @@ static BetterXib *sharedPlugin;
 
 - (void)doMainMenu{
     if(_currentProjectName.length == 0){
-        return;
-    }
-    NSString * projectPath = [self projectPath:_currentProjectName];
-    if(![[NSWorkspace sharedWorkspace] openFile:projectPath withApplication:@"Xcode"]){
-        NSLog(@"open fail");
+        [self doAddProject];
+    }else{
+        NSString * projectPath = [self projectPath:_currentProjectName];
+        if(![[NSWorkspace sharedWorkspace] openFile:projectPath withApplication:@"Xcode"]){
+            NSLog(@"open fail");
+        }
     }
 }
 

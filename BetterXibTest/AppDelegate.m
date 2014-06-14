@@ -172,11 +172,12 @@ static NSString * const PLIST_LAST_PROJECT = @"lastProjectName";
 
 - (void)doMainMenu{
     if(_currentProjectName.length == 0){
-        return;
-    }
-    NSString * projectPath = [self projectPath:_currentProjectName];
-    if(![[NSWorkspace sharedWorkspace] openFile:projectPath withApplication:@"Xcode"]){
-        NSLog(@"open fail");
+        [self doAddProject];
+    }else{
+        NSString * projectPath = [self projectPath:_currentProjectName];
+        if(![[NSWorkspace sharedWorkspace] openFile:projectPath withApplication:@"Xcode"]){
+            NSLog(@"open fail");
+        }
     }
 }
 
