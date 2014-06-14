@@ -11,11 +11,17 @@ BetterXib
 生活美好了一些！
 
 接着，在学会儿编写Xcode插件后，我写了`BetterXib`
+
 它很小，但很有用！
+
 现在你只需要按下`Ctrl+G`，那个`Label`就会出现在你的面前！
 
 使用方法
 --------
-按`Ctrl+G`会引导你生成一个控件模板文件，然后你可以在模板文件中存放项目中经常使用到的`UI控件`
+- **插件安装**
+  copy BetterXib.xcplugin to ~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/ or build target , after build, Xcode will help you copy the plug-in product to that directory.
+Then you should restart Xcode ,let Xcode load the plug-in.
 
-下次使用的时候，再按`Ctrl+G`，模板文件会被打开，你就可以从里面选择你需要的控件啦。
+- **使用**
+  按`Ctrl+G`会引导生成一个控件模板文件，然后你可以在模板文件中存放项目中经常使用到的`UI控件`
+  下次使用的时候，再按`Ctrl+G`，模板文件会被打开，你就可以从里面选择你需要的控件啦。
