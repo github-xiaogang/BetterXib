@@ -8,18 +8,20 @@
 
 #import "AppDelegate.h"
 #import "AddProjectWindowController.h"
+#import "TProject.h"
 
 static NSString * const PLUGIN_NAME = @"BetterXib";
-static NSString * const WORKING_DIR = @"BetterXib";
+static NSString * const WORKING_DIR = @".BetterXib";
 static NSString * const PROJECT_DIR = @"Projects";
 static NSString * const HELLO_FILE = @"hello.plist";
 static NSString * const XIB_SUFFIX = @"xib";
+static NSString * const STORYBOARD_SUFFIX = @"storyboard";
 static NSString * const PLIST_LAST_PROJECT = @"lastProjectName";
 
 @interface AppDelegate ()
 {
-    NSArray * _projectNames;
-    NSString * _currentProjectName;
+    NSArray * _projects;
+    TProject * _currentProject;
     AddProjectWindowController * _addProjectWindowController;
 }
 @end
@@ -60,25 +62,48 @@ static NSString * const PLIST_LAST_PROJECT = @"lastProjectName";
     NSError * error = nil;
     NSArray * projectNames = [fileManager contentsOfDirectoryAtPath:[self projectsDir] error:&error];
     NSMutableArray * projects = [NSMutableArray array];
+    
     NSString * xibSuffix = [NSString stringWithFormat:@".%@",XIB_SUFFIX];
+    NSString * storyboardSuffix = [NSString stringWithFormat:@".%@",STORYBOARD_SUFFIX];
     for (NSString * projectName in projectNames) {
-        if([projectName hasSuffix:xibSuffix]){
-            NSString * name = [projectName stringByReplacingOccurrencesOfString: xibSuffix withString:@""];
-            if(name.length > 0){
-                [projects addObject:name];
+        if([projectName hasSuffix:xibSuffix] || [projectName hasSuffix:storyboardSuffix]){
+            if([projectName hasSuffix:xibSuffix]){
+                NSString * name = [projectName stringByReplacingOccurrencesOfString:xibSuffix withString:@""];
+                if(name.length > 0){
+                    TProject * project = [[TProject alloc] init];
+                    project.name = name;
+                    project.type = ProjectTypeXib;
+                    [projects addObject:project];
+                }
+            }else if([projectName hasSuffix:storyboardSuffix]){
+                NSString * name = [projectName stringByReplacingOccurrencesOfString:storyboardSuffix withString:@""];
+                if(name.length > 0){
+                    TProject * project = [[TProject alloc] init];
+                    project.name = name;
+                    project.type = ProjectTypeStoryboard;
+                    [projects addObject:project];
+                }
             }
         }
     }
-    _projectNames = projects;
-    if(_projectNames.count > 0){
+    _projects = projects;
+    if(_projects.count > 0){
         //current projectName;
         NSDictionary * helloData = [NSDictionary dictionaryWithContentsOfFile:[self helloPath]];
         NSString * lastProjectName = helloData[PLIST_LAST_PROJECT];
-        if(lastProjectName.length > 0 && [_projectNames containsObject:lastProjectName]){
-            _currentProjectName = lastProjectName;
-        }else{
-            _currentProjectName = _projectNames[0];
+        TProject * lastProject = nil;
+        if(lastProjectName.length > 0){
+            for (TProject * project in _projects) {
+                if([project.name isEqualToString:lastProjectName]){
+                    lastProject = project;
+                    break;
+                }
+            }
         }
+        if(!lastProject){
+            lastProject = _projects[0];
+        }
+        _currentProject = lastProject;
     }
 }
 
@@ -97,23 +122,24 @@ static NSString * const PLIST_LAST_PROJECT = @"lastProjectName";
     NSMenu * subMenu = [[NSMenu alloc] init];
     [mainMenu setSubmenu:subMenu];
     //add project Menu
-    for (int i=0; i<_projectNames.count; i++) {
-        NSString * projectName = _projectNames[i];
+    for (int i=0; i<_projects.count; i++) {
+        TProject * project = _projects[i];
+        NSString * projectName = project.name;
         NSMenuItem *projectMenu = [[NSMenuItem alloc] initWithTitle:projectName action:@selector(doProjectMenu:) keyEquivalent:@""];
-        if([projectName isEqualToString:_currentProjectName]){
+        if(project == _currentProject){
             [projectMenu setState:NSOnState];
         }
         [projectMenu setTarget:self];
         [[mainMenu submenu] addItem:projectMenu];
     }
-    if(_projectNames.count > 0){
+    if(_projects.count > 0){
         [[mainMenu submenu] addItem:[NSMenuItem separatorItem]];
     }
+    [[mainMenu submenu] addItem:[NSMenuItem separatorItem]];
     //new project menu
     NSMenuItem *addMenu = [[NSMenuItem alloc] initWithTitle:@"新建" action:@selector(doAddProject) keyEquivalent:@""];
     [addMenu setTarget:self];
     [[mainMenu submenu] addItem:addMenu];
-    [[mainMenu submenu] addItem:[NSMenuItem separatorItem]];
     //working dir menu
     NSMenuItem *homeMenu = [[NSMenuItem alloc] initWithTitle:@"工作目录" action:@selector(doGoHome) keyEquivalent:@""];
     [homeMenu setTarget:self];
@@ -125,10 +151,11 @@ static NSString * const PLIST_LAST_PROJECT = @"lastProjectName";
     __block typeof(self) bself = self;
     if(!_addProjectWindowController){
         _addProjectWindowController = [[AddProjectWindowController alloc] initWithWindowNibName:@"AddProjectWindowController"];
-        [_addProjectWindowController setCompleteBlock:^(NSString *projectName, BOOL isPlatformIOS) {
+        [_addProjectWindowController setCompleteBlock:^(NSString *projectName, BOOL isPlatformIOS, BOOL xibOrStoryboard) {
             //projectName exist ?
             BOOL projectNameExists = NO;
-            for (NSString * name in bself->_projectNames) {
+            for (TProject * project in bself->_projects) {
+                NSString * name = project.name;
                 if([name isEqualToString:projectName]){
                     projectNameExists = YES;
                     break;
@@ -139,29 +166,39 @@ static NSString * const PLIST_LAST_PROJECT = @"lastProjectName";
                 [alert runModal];
             }else{
                 NSData * templateData = nil;
-                NSString * templatePath = [bself templatePath:isPlatformIOS];
+                NSString * templatePath = [bself templatePathForPlatform:isPlatformIOS xibOrStoryboard:xibOrStoryboard];
                 templateData = [NSData dataWithContentsOfFile:templatePath];
-                NSString * projectPath = [bself projectPath:projectName];
+                NSString * projectPath = [bself projectPathFor:projectName platform:isPlatformIOS xibOrStoryboard:xibOrStoryboard];
                 __autoreleasing NSError * error = nil;
                 if(![templateData writeToFile:projectPath options:0 error:&error]){
                     NSLog(@"%@",error);
                 }else{
                     //add new project menu
+                    TProject * project = [[TProject alloc] initWithName:projectName platform:isPlatformIOS xibType:xibOrStoryboard];
+                    NSMutableArray * mutableProjects = [NSMutableArray arrayWithArray:bself->_projects ? bself->_projects : @[]];
+                    [mutableProjects insertObject:project atIndex:0];
+                    
                     NSMenu * mainMenu = [bself mainMenu];
                     if(!mainMenu) return;
                     NSMenuItem * newItem = [[NSMenuItem alloc] initWithTitle:projectName action:@selector(doProjectMenu:) keyEquivalent:@""];
                     [newItem setTarget:bself];
                     [mainMenu insertItem:newItem atIndex:0];
-                    [bself setCurrentProject:projectName];
-                    NSMutableArray * mutableProjects = [NSMutableArray arrayWithArray: bself->_projectNames.count > 0 ? bself->_projectNames : @[]];
-                    [mutableProjects insertObject:projectName atIndex:0];
-                    [bself doMainMenu];
+                    
+                    [bself setCurrentProject:project];
+                    [bself doMainMenu]; //手动
                     [bself->_addProjectWindowController close];
                     bself->_addProjectWindowController = nil;
+                    
                 }
             }
         }];
     }
+    NSScreen * screen = [NSScreen mainScreen];
+    CGFloat screenWidth = screen.frame.size.width;
+    CGFloat screenHeight = screen.frame.size.height;
+    CGFloat windowWidth = _addProjectWindowController.window.frame.size.width;
+    CGFloat windowHeight = _addProjectWindowController.window.frame.size.height;
+    [_addProjectWindowController.window setFrameOrigin :NSMakePoint((screenWidth - windowWidth)/2, (screenHeight - windowHeight - 100))];
     [_addProjectWindowController showWindow:nil];
 }
 
@@ -171,10 +208,10 @@ static NSString * const PLIST_LAST_PROJECT = @"lastProjectName";
 }
 
 - (void)doMainMenu{
-    if(_currentProjectName.length == 0){
+    if(!_currentProject){
         [self doAddProject];
     }else{
-        NSString * projectPath = [self projectPath:_currentProjectName];
+        NSString * projectPath = [self projectPath:_currentProject];
         if(![[NSWorkspace sharedWorkspace] openFile:projectPath withApplication:@"Xcode"]){
             NSLog(@"open fail");
         }
@@ -183,18 +220,21 @@ static NSString * const PLIST_LAST_PROJECT = @"lastProjectName";
 
 - (void)doProjectMenu: (NSMenuItem *)projectMenu{
     NSString * projectName = projectMenu.title;
-    NSString * projectPath = [self projectPath:projectName];
-    [[NSWorkspace sharedWorkspace] openFile:projectPath withApplication:@"Xcode"];
-    [self setCurrentProject:projectName];
+    TProject * project = [self projectByName:projectName];
+    NSString * projectPath = [self projectPath:project];
+    if(projectPath.length > 0){
+        [[NSWorkspace sharedWorkspace] openFile:projectPath withApplication:@"Xcode"];
+        [self setCurrentProject:project];
+    }
 }
 
-- (void)setCurrentProject: (NSString *)projectName
+- (void)setCurrentProject: (TProject *)project
 {
-    if(![projectName isEqualToString:_currentProjectName]){
-        _currentProjectName = projectName;
+    if(project != _currentProject){
+        _currentProject = project;
         //save
         NSDictionary * data = @{
-                                PLIST_LAST_PROJECT : projectName,
+                                PLIST_LAST_PROJECT : project.name,
                                 };
         [data writeToFile:[self helloPath] atomically:YES];
         
@@ -202,7 +242,7 @@ static NSString * const PLIST_LAST_PROJECT = @"lastProjectName";
         for (NSMenuItem * menuItem in subMenus) {
             menuItem.state = NSOffState;
         }
-        [[self projectMenuItem:projectName] setState:NSOnState];
+        [[self projectMenuItem:project] setState:NSOnState];
     }
 }
 
@@ -218,10 +258,22 @@ static NSString * const PLIST_LAST_PROJECT = @"lastProjectName";
     return mainMenu;
 }
 
-- (NSMenuItem *)projectMenuItem: (NSString *)projectName
+- (NSMenuItem *)projectMenuItem: (TProject *)project
 {
     NSMenu * mainMenu = [self mainMenu];
-    return [mainMenu itemWithTitle:projectName];
+    return [mainMenu itemWithTitle:project.name];
+}
+
+- (TProject *)projectByName: (NSString *)projectName
+{
+    TProject * targetProject = nil;
+    for (TProject * project in _projects) {
+        if([project.name isEqualToString:projectName]){
+            targetProject = project;
+            break;
+        }
+    }
+    return targetProject;
 }
 
 #pragma mark -----------------   util   ----------------
@@ -238,16 +290,44 @@ static NSString * const PLIST_LAST_PROJECT = @"lastProjectName";
     return [NSString stringWithFormat:@"%@/%@",[self workingDir],HELLO_FILE];
 }
 
-- (NSString *)projectPath: (NSString *)projectName{
-    return [NSString stringWithFormat:@"%@/%@.%@",[self projectsDir],projectName,XIB_SUFFIX];
+- (NSString *)projectPath: (TProject *)project{
+    if(!project) return nil;
+    NSString * suffix = project.type == ProjectTypeXib ? XIB_SUFFIX : STORYBOARD_SUFFIX;
+    return [NSString stringWithFormat:@"%@/%@.%@",[self projectsDir],project.name,suffix];
 }
 
-- (NSString *)templatePath: (BOOL)isPlatformIOS{
-    NSString * resourceName = isPlatformIOS ? @"IOSTemplate" : @"MacTemplate";
+- (NSString *)projectPathFor: (NSString *)projectName platform: (BOOL)isPlatformIOS xibOrStoryboard: (BOOL)xibOrStoryboard
+{
+    if(projectName.length == 0) return nil;
+    NSString * suffix = nil;
+    {
+        if(isPlatformIOS){
+            //ios
+            suffix = xibOrStoryboard ? XIB_SUFFIX : STORYBOARD_SUFFIX;
+        }else{
+            //mac
+            suffix = XIB_SUFFIX;
+        }
+    }
+    return [NSString stringWithFormat:@"%@/%@.%@",[self projectsDir],projectName,suffix];
+}
+
+- (NSString *)templatePathForPlatform: (BOOL)isPlatformIOS xibOrStoryboard: (BOOL)xibOrStoryboard{
+    NSString * resourceName = nil;
+    {
+        if(isPlatformIOS){
+            //ios
+            resourceName = xibOrStoryboard ? @"IOSTemplate" : @"IOSStoryboardTemplate";
+        }else{
+            //mac
+            resourceName = @"MacTemplate";
+        }
+    }
     NSBundle * bundle = [NSBundle bundleForClass:[self class]];
     NSString * templatePath = [bundle pathForResource:resourceName ofType:@"xml"];
     return templatePath;
 }
+
 
 @end
 

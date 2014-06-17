@@ -10,6 +10,6 @@
 
 @interface AddProjectWindowController : NSWindowController
 
-@property (nonatomic, copy) void (^completeBlock)(NSString * projectName, BOOL isPlatformIOS);
+@property (nonatomic, copy) void (^completeBlock)(NSString * projectName, BOOL isPlatformIOS, BOOL xibOrStoryboard);
 
 @end

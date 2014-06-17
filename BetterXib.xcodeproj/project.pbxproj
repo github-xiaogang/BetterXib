@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1F7ECBED194C757F00C70AAA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FDF3896194AE9660000C12B /* MainMenu.xib */; };
+		1F8C1516194FF751006DA9B3 /* IOSStoryboardTemplate.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1F8C1515194FF751006DA9B3 /* IOSStoryboardTemplate.xml */; };
+		1F8C1517194FF751006DA9B3 /* IOSStoryboardTemplate.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1F8C1515194FF751006DA9B3 /* IOSStoryboardTemplate.xml */; };
 		1F9FFE82194C0E9800465172 /* AddProjectWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FFE80194C0E9800465172 /* AddProjectWindowController.m */; };
 		1F9FFE83194C0E9800465172 /* AddProjectWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F9FFE81194C0E9800465172 /* AddProjectWindowController.xib */; };
 		1F9FFE84194C131D00465172 /* AddProjectWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FFE80194C0E9800465172 /* AddProjectWindowController.m */; };
@@ -30,6 +32,8 @@
 		1FDF38A2194AE9660000C12B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDF3881194AE9660000C12B /* Cocoa.framework */; };
 		1FDF38AA194AE9660000C12B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FDF38A8194AE9660000C12B /* InfoPlist.strings */; };
 		1FDF38AC194AE9660000C12B /* BetterXibTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FDF38AB194AE9660000C12B /* BetterXibTestTests.m */; };
+		1FEE29D319503FDD000AED40 /* TProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE29D219503FDD000AED40 /* TProject.m */; };
+		1FEE29D519504CF5000AED40 /* TProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE29D219503FDD000AED40 /* TProject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F8C1515194FF751006DA9B3 /* IOSStoryboardTemplate.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = IOSStoryboardTemplate.xml; sourceTree = "<group>"; };
 		1F9FFE7F194C0E9800465172 /* AddProjectWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddProjectWindowController.h; sourceTree = "<group>"; };
 		1F9FFE80194C0E9800465172 /* AddProjectWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddProjectWindowController.m; sourceTree = "<group>"; };
 		1F9FFE81194C0E9800465172 /* AddProjectWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddProjectWindowController.xib; sourceTree = "<group>"; };
@@ -75,6 +80,8 @@
 		1FDF38A7194AE9660000C12B /* BetterXibTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BetterXibTestTests-Info.plist"; sourceTree = "<group>"; };
 		1FDF38A9194AE9660000C12B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1FDF38AB194AE9660000C12B /* BetterXibTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BetterXibTestTests.m; sourceTree = "<group>"; };
+		1FEE29D119503FDD000AED40 /* TProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TProject.h; sourceTree = "<group>"; };
+		1FEE29D219503FDD000AED40 /* TProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TProject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +150,7 @@
 		1FDF386B194AE1070000C12B /* BetterXib */ = {
 			isa = PBXGroup;
 			children = (
+				1FEE29D0195030B0000AED40 /* Model */,
 				1FDF3871194AE1070000C12B /* BetterXib.h */,
 				1FDF3872194AE1070000C12B /* BetterXib.m */,
 				1FDF386C194AE1070000C12B /* Supporting Files */,
@@ -151,6 +159,7 @@
 				1F9FFE81194C0E9800465172 /* AddProjectWindowController.xib */,
 				1F9FFE86194C150100465172 /* MacTemplate.xml */,
 				1F9FFE89194C151400465172 /* IOSTemplate.xml */,
+				1F8C1515194FF751006DA9B3 /* IOSStoryboardTemplate.xml */,
 			);
 			path = BetterXib;
 			sourceTree = "<group>";
@@ -215,6 +224,15 @@
 				1FDF38A8194AE9660000C12B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1FEE29D0195030B0000AED40 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1FEE29D119503FDD000AED40 /* TProject.h */,
+				1FEE29D219503FDD000AED40 /* TProject.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F8C1516194FF751006DA9B3 /* IOSStoryboardTemplate.xml in Resources */,
 				1FDF3870194AE1070000C12B /* InfoPlist.strings in Resources */,
 				1F9FFE8A194C151400465172 /* IOSTemplate.xml in Resources */,
 				1F9FFE87194C150100465172 /* MacTemplate.xml in Resources */,
@@ -328,6 +347,7 @@
 				1FDF3892194AE9660000C12B /* Credits.rtf in Resources */,
 				1F9FFE85194C132200465172 /* AddProjectWindowController.xib in Resources */,
 				1F7ECBED194C757F00C70AAA /* MainMenu.xib in Resources */,
+				1F8C1517194FF751006DA9B3 /* IOSStoryboardTemplate.xml in Resources */,
 				1F9FFE8B194C151400465172 /* IOSTemplate.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FEE29D319503FDD000AED40 /* TProject.m in Sources */,
 				1FDF3873194AE1070000C12B /* BetterXib.m in Sources */,
 				1F9FFE82194C0E9800465172 /* AddProjectWindowController.m in Sources */,
 			);
@@ -356,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FEE29D519504CF5000AED40 /* TProject.m in Sources */,
 				1FDF3895194AE9660000C12B /* AppDelegate.m in Sources */,
 				1F9FFE84194C131D00465172 /* AddProjectWindowController.m in Sources */,
 				1FDF388E194AE9660000C12B /* main.m in Sources */,

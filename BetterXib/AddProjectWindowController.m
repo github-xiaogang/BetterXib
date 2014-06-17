@@ -12,6 +12,8 @@
 
 @property (weak) IBOutlet NSTextField *projectNameTextfield;
 @property (weak) IBOutlet NSMatrix *typeMatrix;
+@property (weak) IBOutlet NSMatrix *storyboardMatrix;
+
 
 @end
 
@@ -39,10 +41,20 @@
     return isPassed;
 }
 
+- (IBAction)typeMartrixValueChanged:(NSMatrix *)sender {
+    if(self.typeMatrix.selectedRow == 0){
+        //iOS
+        [self.storyboardMatrix setHidden:NO];
+    }else{
+        //Mac
+        [self.storyboardMatrix setHidden:YES];
+    }
+}
+
 - (IBAction)doneButtonPressed:(id)sender {
     if(![self validateInputValues]) return;
     if(_completeBlock){
-        _completeBlock(self.projectNameTextfield.stringValue,(self.typeMatrix.selectedRow == 0));
+        _completeBlock(self.projectNameTextfield.stringValue,(self.typeMatrix.selectedRow == 0),(self.storyboardMatrix.selectedRow == 0));
     }
 }
 
@@ -51,3 +63,14 @@
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
